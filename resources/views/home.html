@@ -1,0 +1,62 @@
+{% extends 'views/template/layout.html' %}
+
+{% block content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Dashboard</h1>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Main row -->
+      <div class="row">
+        <!-- Center col -->
+        <section class="col-lg-12 connectedSortable">
+          <!-- Custom tabs (Charts with tabs)-->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="fas fa-home mr-1"></i>
+                Kota Bandung
+              </h3>
+              <div class="card-tools">
+                <h5>{{ weather.tanggal}}</h3>
+              </div>
+            </div><!-- /.card-header -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6">
+                  <h4>Temperatur maks : {{weather.temp_maks}} &#8451;</h4>
+                  <h4>Temperatur min : {{weather.temp_min}} &#8451; </h4>
+                  <h4>Temperatur med : {{weather.temp_med}} &#8451;</h4>
+                  <h4>Kelembapan rel : {{weather.hum_rel}} %</h4>
+                  <h4>Kecepatan Angin : {{weather.wind_speed}} Km/h</h4>
+                </div>
+                <div class="col-6 d-flex justify-content-center  my-auto">
+                  <h3>Cuaca hari ini : {{weather.weather_summary}}</h3>
+                </div>
+              </div>
+            </div><!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </section>
+        <!-- /.Center col -->
+      </div>
+      <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}

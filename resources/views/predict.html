@@ -1,0 +1,94 @@
+{% extends 'views/template/layout.html' %}
+
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Report</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                        <li class="breadcrumb-item active">Report</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Make Weather Predict </h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <form action="{% url 'predict' %}" method="post">
+                            {% csrf_token %}
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputTanggal">Tanggal</label>
+                                            <input type="date" class="form-control" id="tanggal" name="tanggal"
+                                                placeholder="Enter Tanggal">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputTemperaturMaks">Temperatur Maks</label>
+                                            <input type="number" step="0.01" class="form-control" id="tempmaks"
+                                                name="tempmaks" placeholder="Enter Temperatur Maks">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputTemperaturMin">Temperatur Min</label>
+                                            <input type="number" step="0.01" class="form-control" id="tempmin"
+                                                name="tempmin" placeholder="Enter Temperatur Min">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputTemperaturMed">Temperatur Med</label>
+                                            <input type="number" step="0.01" class="form-control" id="tempmed"
+                                                name="tempmed" placeholder="Enter Temperatur Med">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputHr">Hr. Med (%)</label>
+                                            <input type="number" step="0.01" class="form-control" id="hrmed"
+                                                name="hrmed" placeholder="Enter Hr. Med">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputWind">Wind Int. (Km/h)</label>
+                                            <input type="number" step="0.01" class="form-control" id="windint"
+                                                name="windint" placeholder="Enter Wind Int.">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <input type="submit" class="btn btn-primary" value="Predict">
+                                <a class="btn btn-secondary" href="{% url 'report' %}">Cancel</a>
+                            </div>
+                        </form>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}

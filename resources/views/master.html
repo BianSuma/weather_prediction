@@ -1,0 +1,106 @@
+{% extends 'views/template/layout.html' %}
+
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Weather Data Master</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+            <li class="breadcrumb-item active">Weather Data Master</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Weather Data From Ogimet.com</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Max Temperature</th>
+                    <th>Min Temperature</th>
+                    <th>Med Temperature</th>
+                    <th>Td. Med(C)</th>
+                    <th>Hr. Med(%)</th>
+                    <th>Wind (Km/h) Dir.</th>
+                    <th>Wind (Km/h) Int.</th>
+                    <th>Pres. S. Lev(Hp)</th>
+                    <th>Prec. (mm)</th>
+                    <th>TotClOct</th>
+                    <th>LowClOct</th>
+                    <th>Sun D-1(h)</th>
+                    <th>Vis Km</th>
+                    <th>Daily Weather Summary 09.00.00</th>
+                    <th>Daily Weather Summary 12.00.00</th>
+                    <th>Daily Weather Summary 15.00.00</th>
+                    <th>Daily Weather Summary 18.00.00</th>
+                    <th>Daily Weather Summary 21.00.00</th>
+                    <th>Daily Weather Summary 00.00.00</th>
+                    <th>Daily Weather Summary 03.00.00</th>
+                    <th>Daily Weather Summary 06.00.00</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for weather in weathers %}
+                  <tr>
+                    <td>{{ weather.tanggal }}</td>
+                    <td>{{ weather.temp_maks }}</td>
+                    <td>{{ weather.temp_min }}</td>
+                    <td>{{ weather.temp_med }}</td>
+                    <td>{{ weather.td_med }}</td>
+                    <td>{{ weather.hr_med }}</td>
+                    <td>{{ weather.wind_dir }}</td>
+                    <td>{{ weather.wind_int }}</td>
+                    <td>{{ weather.pres_lev }}</td>
+                    <td>{{ weather.prec }}</td>
+                    <td>{{ weather.totcloct }}</td>
+                    <td>{{ weather.lowcloct }}</td>
+                    <td>{{ weather.sun }}</td>
+                    <td>{{ weather.vis_km }}</td>
+                    <td>{{ weather.sum_09 }}</td>
+                    <td>{{ weather.sum_12 }}</td>
+                    <td>{{ weather.sum_15 }}</td>
+                    <td>{{ weather.sum_18 }}</td>
+                    <td>{{ weather.sum_21 }}</td>
+                    <td>{{ weather.sum_00 }}</td>
+                    <td>{{ weather.sum_03 }}</td>
+                    <td>{{ weather.sum_06 }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+{% endblock %}

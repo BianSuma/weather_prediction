@@ -53,13 +53,15 @@
                                 </thead>
                                 <tbody>
                                     {% for weather in weathers %}
-                                    <td>{{ weather.tanggal }}</td>
-                                    <td>{{ weather.temp_maks }}</td>
-                                    <td>{{ weather.temp_maks }}</td>
-                                    <td>{{ weather.temp_med }}</td>
-                                    <td>{{ weather.hum_rel }}</td>
-                                    <td>{{ weather.wind_speed }}</td>
-                                    <td>{{ weather.weather_summary }}</td>
+                                    <tr>
+                                        <td>{{ weather.tanggal }}</td>
+                                        <td>{{ weather.temp_maks }}</td>
+                                        <td>{{ weather.temp_maks }}</td>
+                                        <td>{{ weather.temp_med }}</td>
+                                        <td>{{ weather.hum_rel }}</td>
+                                        <td>{{ weather.wind_speed }}</td>
+                                        <td>{{ weather.weather_summary }}</td>
+                                    </tr>
                                     {% endfor %}
                                 </tbody>
                             </table>

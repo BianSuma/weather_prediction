@@ -1,6 +1,6 @@
 {% extends 'views/template/layout.html' %}
 
-{% block content %}
+<!-- {% block content %}
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -60,30 +60,30 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for weather in weathers %}
+                  {% for i in weathers %}
                   <tr>
-                    <td>{{ weather.tanggal }}</td>
-                    <td>{{ weather.temp_maks }}</td>
-                    <td>{{ weather.temp_min }}</td>
-                    <td>{{ weather.temp_med }}</td>
-                    <td>{{ weather.td_med }}</td>
-                    <td>{{ weather.hr_med }}</td>
-                    <td>{{ weather.wind_dir }}</td>
-                    <td>{{ weather.wind_int }}</td>
-                    <td>{{ weather.pres_lev }}</td>
-                    <td>{{ weather.prec }}</td>
-                    <td>{{ weather.totcloct }}</td>
-                    <td>{{ weather.lowcloct }}</td>
-                    <td>{{ weather.sun }}</td>
-                    <td>{{ weather.vis_km }}</td>
-                    <td>{{ weather.sum_09 }}</td>
-                    <td>{{ weather.sum_12 }}</td>
-                    <td>{{ weather.sum_15 }}</td>
-                    <td>{{ weather.sum_18 }}</td>
-                    <td>{{ weather.sum_21 }}</td>
-                    <td>{{ weather.sum_00 }}</td>
-                    <td>{{ weather.sum_03 }}</td>
-                    <td>{{ weather.sum_06 }}</td>
+                    <td>{{ i.Tanggal }}</td>
+                    <td>{{ i.Temperature_Max }}</td>
+                    <td>{{ i.Temperature_Min }}</td>
+                    <td>{{ i.Temperature_Med }}</td>
+                    <td>{{ i.Td_Med_C }}</td>
+                    <td>{{ i.Hr_Med_Percent }}</td>
+                    <td>{{ i.Wind_Dir }}</td>
+                    <td>{{ i.Wind_Int_km_h }}</td>
+                    <td>{{ i.Pres_S_Lev_Hp }}</td>
+                    <td>{{ i.Prec_mm }}</td>
+                    <td>{{ i.TotClOct }}</td>
+                    <td>{{ i.LowClOct }}</td>
+                    <td>{{ i.Sun_D_1_h }}</td>
+                    <td>{{ i.Vis_Km }}</td>
+                    <td>{{ i.Daily_Weather_Summary_09_00_00 }}</td>
+                    <td>{{ i.Daily_Weather_Summary_12_00_00 }}</td>
+                    <td>{{ i.Daily_Weather_Summary_15_00_00 }}</td>
+                    <td>{{ i.Daily_Weather_Summary_18_00_00 }}</td>
+                    <td>{{ i.Daily_Weather_Summary_21_00_00 }}</td>
+                    <td>{{ i.Daily_Weather_Summary_00_00_00 }}</td>
+                    <td>{{ i.Daily_Weather_Summary_03_00_00 }}</td>
+                    <td>{{ i.Daily_Weather_Summary_06_00_00 }}</td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -103,4 +103,4 @@
 </div>
 <!-- /.content-wrapper -->
 
-{% endblock %}
+{% endblock %} -->
